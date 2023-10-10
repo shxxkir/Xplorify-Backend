@@ -13,6 +13,9 @@ connectDB();
 // Parse JSON request bodies
 app.use(express.json());
 
+// Set up your routes
+app.use('/', require('./routes/packageRoute'));
+
 const PORT = process.env.PORT || 8080;
 
 // Start the server
