@@ -1,5 +1,6 @@
 const express = require("express");
 const dotenv = require("dotenv");
+const cors = require("cors")
 const connectDB = require("./configs/db");
 
 const app = express();
@@ -9,6 +10,8 @@ dotenv.config();
 
 // Connect to MongoDB
 connectDB();
+
+app.use(cors());
 
 // Parse JSON request bodies
 app.use(express.json());
